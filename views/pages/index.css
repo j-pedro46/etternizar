@@ -1,163 +1,558 @@
-/* ── VARIÁVEIS ── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
 :root {
-  --fundo:    #F5F2E9;
-  --secao:    #E7DFD1;
-  --card:     #FAF9F6;
-  --destaque: #B08A45;
-  --titulo:   #8B6A38;
-  --texto:    #5E4525;
-  --borda:    #CFC5B5;
+    --fundo: #F5EBDD;
+    --secao: #E8D4BC;
+    --card: #FBF3E8;
+    --destaque: #BD8738;
+    --dourado: #D6B56D;
+    --marrom: #5E4525;
+    --marrom-escuro: #402713;
+    --texto: #5E4525;
+    --borda: #DDC9AE;
 }
 
-/* ── RESET ── */
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
-/* ── BASE ── */
 body {
-  background: var(--fundo);
-  color: var(--texto);
-  font-family: 'Georgia', serif;
-  min-height: 100vh;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: 'Playfair Display', Georgia, serif;
+    min-height: 100vh;
 }
 
-/* ── HERO ── */
+/* =========================
+   MENU LATERAL
+========================= */
+
+.menu {
+    position: relative;
+    z-index: 1000;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    position: fixed;
+    top: 22px;
+    left: 22px;
+    width: 56px;
+    height: 56px;
+    background: var(--marrom);
+    border: 1px solid var(--dourado);
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1004;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .15);
+    transition: .3s ease;
+}
+
+.menu-icon:hover {
+    background: #76552C;
+    transform: translateY(-2px);
+}
+
+.menu-icon span,
+.menu-icon span::before,
+.menu-icon span::after {
+    position: absolute;
+    width: 25px;
+    height: 2px;
+    background: var(--dourado);
+    border-radius: 5px;
+    transition: .3s ease;
+}
+
+.menu-icon span::before,
+.menu-icon span::after {
+    content: "";
+    left: 0;
+}
+
+.menu-icon span::before {
+    transform: translateY(-8px);
+}
+
+.menu-icon span::after {
+    transform: translateY(8px);
+}
+
+#menu-toggle:checked + .menu-icon span {
+    background: transparent;
+}
+
+#menu-toggle:checked + .menu-icon span::before {
+    transform: rotate(45deg);
+}
+
+#menu-toggle:checked + .menu-icon span::after {
+    transform: rotate(-45deg);
+}
+
+/* Fundo escuro */
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(40, 27, 12, .55);
+    opacity: 0;
+    visibility: hidden;
+    transition: .35s ease;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+/* Painel */
+
+.menu-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 315px;
+    max-width: 85vw;
+    height: 100vh;
+    background: linear-gradient(160deg, #4B2D16, #5E391C 65%, #402713);
+    padding: 65px 25px 25px;
+    transform: translateX(-105%);
+    transition: transform .4s cubic-bezier(.77, 0, .18, 1);
+    z-index: 1002;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 8px 0 30px rgba(0, 0, 0, .22);
+}
+
+#menu-toggle:checked ~ .menu-list {
+    transform: translateX(0);
+}
+
+#menu-toggle:checked ~ .menu-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Cabeçalho do menu */
+
+.menu-header {
+    text-align: center;
+    border-bottom: 1px solid rgba(214, 181, 109, .5);
+    padding: 15px 0 28px;
+}
+
+.menu-rose {
+    color: var(--dourado);
+    font-size: 75px;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.menu-header h2 {
+    color: var(--dourado);
+    font-size: 35px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+.menu-header p {
+    color: #F5EBDD;
+    font-size: 14px;
+    margin-top: 7px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Navegação */
+
+.menu-list ul {
+    list-style: none;
+    margin: 35px 0 auto;
+}
+
+.menu-list li {
+    margin-bottom: 12px;
+}
+
+.menu-list a {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 14px 17px;
+    color: #F5EBDD;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    border-radius: 35px;
+    transition: .3s ease;
+}
+
+.menu-list a:hover {
+    background: rgba(214, 181, 109, .2);
+    color: var(--dourado);
+    padding-left: 23px;
+}
+
+.menu-symbol {
+    color: var(--dourado);
+    font-size: 27px;
+    width: 32px;
+    text-align: center;
+}
+
+/* Rodapé do menu */
+
+.menu-footer {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.menu-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--dourado);
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.menu-decoration span {
+    width: 85px;
+    height: 1px;
+    background: var(--dourado);
+}
+
+.menu-footer p {
+    color: #F5EBDD;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.menu-flower {
+    color: var(--dourado);
+    font-size: 85px;
+    margin-top: 22px;
+    line-height: 1;
+}
+
+/* =========================
+   CABEÇALHO PRINCIPAL
+========================= */
+
 .hero {
-  background: var(--secao);
-  text-align: center;
-  padding: 56px 24px 48px;
-  border-bottom: 1px solid var(--borda);
+    min-height: 265px;
+    background:
+        linear-gradient(rgba(232, 212, 188, .82), rgba(232, 212, 188, .82)),
+        var(--secao);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 55px 25px 35px;
+    border-bottom: 1px solid var(--borda);
+    position: relative;
 }
 
 .hero-eyebrow {
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--destaque);
-  margin-bottom: 12px;
+    color: #9C702D;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    letter-spacing: 5px;
+    font-weight: 500;
+    margin-bottom: 17px;
 }
 
 .hero h1 {
-  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
-  color: var(--titulo);
-  font-weight: normal;
-  line-height: 1.5;
-  max-width: 580px;
-  margin: 0 auto;
+    color: var(--marrom-escuro);
+    font-size: clamp(29px, 4vw, 48px);
+    font-weight: 500;
+    line-height: 1.15;
+    text-align: center;
 }
 
 .hero-divider {
-  width: 48px;
-  height: 1.5px;
-  background: var(--destaque);
-  margin: 20px auto 0;
-  opacity: 0.65;
+    width: 105px;
+    height: 2px;
+    background: var(--destaque);
+    margin-top: 25px;
 }
 
-/* ── CATÁLOGO ── */
+/* =========================
+   CATÁLOGO
+========================= */
+
 .catalog {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 52px 28px 68px;
+    max-width: 1280px;
+    margin: auto;
+    padding: 42px 25px 65px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 28px;
 }
 
 .section-label {
-  text-align: center;
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--destaque);
-  margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    color: #B17D31;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    margin-bottom: 3px;
 }
+
+.section-label span {
+    width: 115px;
+    height: 1px;
+    background: var(--destaque);
+}
+
+.section-heading h2 {
+    color: var(--marrom-escuro);
+    font-size: 48px;
+    font-weight: 500;
+}
+
+/* Grade de produtos */
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
 }
 
-/* ── CARD ── */
+/* Cartões */
+
 .card {
-  background: var(--card);
-  border: 1px solid var(--borda);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform .25s ease, box-shadow .25s ease;
+    background: var(--card);
+    border: 1px solid var(--borda);
+    border-radius: 11px;
+    overflow: hidden;
+    text-align: center;
+    transition: .3s ease;
+    box-shadow: 0 3px 12px rgba(94, 69, 37, .05);
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(94, 69, 37, .1);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(94, 69, 37, .13);
 }
 
-.card-img-top {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
-  background: var(--secao);
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s ease;
 }
 
-.card-body {
-  padding: 18px 16px 20px;
+.card:hover img {
+    transform: scale(1.04);
 }
 
-.card-title {
-  font-size: 1rem;
-  color: var(--titulo);
-  font-weight: normal;
-  margin-bottom: 8px;
+.card-content {
+    position: relative;
+    background: var(--card);
+    padding: 15px 13px 17px;
 }
 
-.card-text {
-  font-size: 0.85rem;
-  line-height: 1.65;
-  margin-bottom: 16px;
+.card h3 {
+    color: var(--marrom-escuro);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 7px;
 }
 
-/* ── BOTÃO ── */
+.card p {
+    color: var(--texto);
+    font-size: 14px;
+    line-height: 1.45;
+    min-height: 40px;
+    margin-bottom: 12px;
+}
+
+/* Botão */
+
 .btn {
-  display: inline-block;
-  padding: 8px 20px;
-  background: var(--destaque);
-  color: var(--card);
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  border-radius: 4px;
-  border: none;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background .2s ease;
+    display: inline-block;
+    background: var(--destaque);
+    color: #fffaf2;
+    text-decoration: none;
+    padding: 10px 27px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    transition: .3s ease;
+    box-shadow: 0 3px 8px rgba(94, 69, 37, .12);
 }
 
 .btn:hover {
-  background: var(--titulo);
+    background: var(--marrom);
+    transform: translateY(-2px);
 }
 
-/* ── RODAPÉ ── */
+/* =========================
+   RODAPÉ
+========================= */
+
 footer {
-  text-align: center;
-  padding: 24px 16px;
-  background: var(--secao);
-  border-top: 1px solid var(--borda);
-  font-size: 0.75rem;
-  color: var(--destaque);
-  letter-spacing: 0.12em;
+    background: linear-gradient(140deg, #4B2D16, #5E4525);
+    color: #F5EBDD;
+    text-align: center;
+    padding: 45px 20px 25px;
+    border-top: 2px solid var(--dourado);
 }
 
-h1{
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  margin: 10px;
+.footer-decoration {
+    color: var(--dourado);
+    font-size: 27px;
+    margin-bottom: 10px;
 }
-.buque{
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  margin: 10px;
+
+footer h2 {
+    color: var(--dourado);
+    font-size: 34px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.footer-line {
+    width: 100px;
+    height: 1px;
+    background: var(--dourado);
+    margin: 0 auto 20px;
+}
+
+footer small {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    color: #E8D4BC;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 992px) {
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .card img {
+        height: 230px;
+    }
+
+    .catalog {
+        padding: 35px 20px 50px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .hero {
+        min-height: 235px;
+        padding: 75px 18px 30px;
+    }
+
+    .hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .section-label {
+        font-size: 10px;
+        letter-spacing: 2px;
+        gap: 9px;
+    }
+
+    .section-label span {
+        width: 45px;
+    }
+
+    .section-heading h2 {
+        font-size: 37px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .card {
+        border-radius: 9px;
+    }
+
+    .card img {
+        height: 165px;
+    }
+
+    .card-content {
+        padding: 11px 7px 12px;
+    }
+
+    .card h3 {
+        font-size: 14px;
+    }
+
+    .card p {
+        font-size: 11px;
+        min-height: 48px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 11px;
+    }
+
+    .catalog {
+        padding: 30px 12px 45px;
+    }
+
+    .menu-icon {
+        top: 15px;
+        left: 15px;
+        width: 46px;
+        height: 46px;
+    }
+
+    .menu-list {
+        width: 285px;
+        padding: 65px 22px 20px;
+    }
+
+    .menu-header h2 {
+        font-size: 30px;
+    }
+
+    .menu-flower {
+        font-size: 65px;
+    }
+
+    footer h2 {
+        font-size: 29px;
+    }
 }

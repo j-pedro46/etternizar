@@ -1,141 +1,228 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Etternizear</title>
-  <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etternizear | Presentes especiais</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
 
-  <header class="hero">
-    <p class="hero-eyebrow">Bem-vindo ao Etternizear</p>
-    <h1>A loja perfeita para presentar pessoas especiais</h1>
-    <div class="hero-divider"></div>
-  </header>
-  <h1>Buques</h1>
+    <!-- MENU LATERAL -->
+    <div class="menu">
+        <input type="checkbox" id="menu-toggle">
 
-  <main class="catalog">
-    <p class="section-label">Nossos Produtos</p>
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+        </label>
 
-    <div class="grid">
+        <label for="menu-toggle" class="menu-overlay"></label>
 
-      <div class="card">
-        <img src="img/produtos/buque_aspiral.jpeg" class="card-img-top" alt="Flor de Rosa">
-        <div class="card-body">
-          <h5 class="card-title">Flor de Rosa</h5>
-          <p class="card-text">Essencial para mostrar sentimentos de amor e admiração.</p>
-          <a href="" class="btn">Ver produto</a>
-        </div>
-      </div>
+        <nav class="menu-list">
 
-      <div class="card">
-        <img src="img/produtos/buque_azulclaro.jpeg" class="card-img-top" alt="Produto">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Descrição breve e carinhosa do produto especial.</p>
-          <a href="#" class="btn">Ver produto</a>
-        </div>
-      </div>
+            <div class="menu-header">
+                <div class="menu-rose">❀</div>
+                <h2>Etternizear</h2>
+                <p>Presentes feitos com carinho</p>
+            </div>
 
-      <div class="card">
-        <img src="img/produtos/buque_azuleve.jpeg" class="card-img-top" alt="Produto">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Descrição breve e carinhosa do produto especial.</p>
-          <a href="#" class="btn">Ver produto</a>
-        </div>
-      </div>
+            <ul>
+                <li>
+                    <a href="#inicio">
+                        <span class="menu-symbol">⌂</span>
+                        Início
+                    </a>
+                </li>
 
-      <div class="card">
-        <img src="img/produtos/buque_azulleve.jpeg" class="card-img-top" alt="Produto">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Descrição breve e carinhosa do produto especial.</p>
-          <a href="#" class="btn">Ver produto</a>
-        </div>
-      </div>
+                <li>
+                    <a href="#buques">
+                        <span class="menu-symbol">❀</span>
+                        Buquês
+                    </a>
+                </li>
 
-      <div class="card">
-        <img src="img/produtos/buque_iluminado.jpeg" class="card-img-top" alt="Produto">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Descrição breve e carinhosa do produto especial.</p>
-          <a href="#" class="btn">Ver produto</a>
-        </div>
-      </div>
+                <li>
+                    <a href="#catalogo">
+                        <span class="menu-symbol">♡</span>
+                        Catálogo
+                    </a>
+                </li>
 
-      <div class="card">
-        <img src="img/produtos/buque_pink.jpeg" class="card-img-top" alt="Produto">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Descrição breve e carinhosa do produto especial.</p>
-          <a href="#" class="btn">Ver produto</a>
-        </div>
-      </div>
+                <li>
+                    <a href="#rodape">
+                        <span class="menu-symbol">✉</span>
+                        Contato
+                    </a>
+                </li>
+            </ul>
 
-      <div class="card">
-        <img src="img/produtos/buque_red.jpeg" class="card-img-top" alt="Produto">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Descrição breve e carinhosa do produto especial.</p>
-          <a href="#" class="btn">Ver produto</a>
-        </div>
-      </div>
+            <div class="menu-footer">
+                <div class="menu-decoration">
+                    <span></span>
+                    ✦
+                    <span></span>
+                </div>
 
-      <div class="card">
-        <img src="img/produtos/buque_rosa.jpeg" class="card-img-top" alt="Produto">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Descrição breve e carinhosa do produto especial.</p>
-          <a href="" class="btn">Ver produto</a>
-        </div>
-      </div>
+                <p>Um presente especial<br>para alguém especial.</p>
+
+                <div class="menu-flower">❀</div>
+            </div>
+
+        </nav>
     </div>
 
-    
+    <!-- CABEÇALHO -->
+    <header class="hero" id="inicio">
 
-    <div class="grid">
-      <div class="card">
-        <img src="img/produtos/buque_sonho_devalsa.jpeg" class="card-img-top" alt="Flor de Rosa">
-        <div class="card-body">
-          <h5 class="card-title">Flores Roxas</h5>
-          <p class="card-text">Flores roxas com ouro branco.</p>
-          <a href="" class="btn">Ver produto</a>
+        <p class="hero-eyebrow">BEM-VINDO À ETTERNIZEAR</p>
+
+        <h1>
+            A loja perfeita para<br>
+            presentear pessoas especiais
+        </h1>
+
+        <div class="hero-divider"></div>
+
+    </header>
+
+    <!-- CATÁLOGO -->
+    <main class="catalog" id="catalogo">
+
+        <div class="section-heading">
+            <div class="section-label">
+                <span></span>
+                NOSSOS PRODUTOS
+                <span></span>
+            </div>
+
+            <h2 id="buques">Buquês</h2>
         </div>
-      </div>
 
-      <div class="card">
-        <img src="img/produtos/buque_whiteblue.jpeg" class="card-img-top" alt="Flor de Rosa">
-        <div class="card-body">
-          <h5 class="card-title">Flores Verdes</h5>
-          <p class="card-text">Mistiras de tons suaves</p>
-          <a href="" class="btn">Ver produto</a>
+        <div class="grid">
+
+            <article class="card">
+                <img src="img/produtos/buque_red.jpeg" alt="Buquê de rosas vermelhas">
+                <div class="card-content">
+                    <h3>Buquê de Rosas Vermelhas</h3>
+                    <p>Essencial para mostrar sentimentos de amor e admiração.</p>
+                    <a href="#" class="btn">Ver produto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="img/produtos/buque_azulclaro.jpeg" alt="Buquê azul claro">
+                <div class="card-content">
+                    <h3>Buquê Azul</h3>
+                    <p>Uma combinação delicada para momentos especiais.</p>
+                    <a href="#" class="btn">Ver produto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="img/produtos/buque_pink.jpeg" alt="Buquê de rosas pink">
+                <div class="card-content">
+                    <h3>Buquê Pink</h3>
+                    <p>Delicadeza e beleza para surpreender alguém.</p>
+                    <a href="#" class="btn">Ver produto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="img/produtos/buque_whiteblue.jpeg" alt="Buquê branco e azul">
+                <div class="card-content">
+                    <h3>Buquê White Blue</h3>
+                    <p>Uma composição elegante e cheia de charme.</p>
+                    <a href="#" class="btn">Ver produto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="img/produtos/buque_aspiral.jpeg" alt="Buquê de flores">
+                <div class="card-content">
+                    <h3>Buquê Espiral</h3>
+                    <p>Um arranjo especial para presentear com carinho.</p>
+                    <a href="#" class="btn">Ver produto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="img/produtos/buqueamarelo.jpeg" alt="Buquê amarelo">
+                <div class="card-content">
+                    <h3>Buquê Amarelo</h3>
+                    <p>Uma escolha alegre para iluminar o dia de alguém.</p>
+                    <a href="#" class="btn">Ver produto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="img/produtos/buque_rosa.jpeg" alt="Buquê rosa">
+                <div class="card-content">
+                    <h3>Buquê Rosa</h3>
+                    <p>Romantismo e delicadeza em cada detalhe.</p>
+                    <a href="#" class="btn">Ver produto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="img/produtos/buque_azuleve.jpeg" alt="Buquê azul">
+                <div class="card-content">
+                    <h3>Buquê Azul Leve</h3>
+                    <p>Uma opção delicada para presentear com elegância.</p>
+                    <a href="#" class="btn">Ver produto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="img/produtos/buque_iluminado.jpeg" alt="Buquê iluminado">
+                <div class="card-content">
+                    <h3>Buquê Iluminado</h3>
+                    <p>Um presente encantador para ocasiões especiais.</p>
+                    <a href="#" class="btn">Ver produto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="img/produtos/buque_azulleve.jpeg" alt="Buquê azul leve">
+                <div class="card-content">
+                    <h3>Buquê Azul Delicado</h3>
+                    <p>Beleza e delicadeza em uma composição especial.</p>
+                    <a href="#" class="btn">Ver produto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="img/produtos/buque_sonho_devalsa.jpeg" alt="Buquê sonho de valsa">
+                <div class="card-content">
+                    <h3>Sonho de Valsa</h3>
+                    <p>Uma combinação especial para surpreender.</p>
+                    <a href="#" class="btn">Ver produto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <img src="img/produtos/tampa_de_caixa.jpeg" alt="Caixa para presente">
+                <div class="card-content">
+                    <h3>Caixa Especial</h3>
+                    <p>Um detalhe especial para completar seu presente.</p>
+                    <a href="#" class="btn">Ver produto</a>
+                </div>
+            </article>
+
         </div>
-      </div>
 
-      <div class="card">
-        <img src="img/produtos/buqueamarelo.jpeg" class="card-img-top" alt="Flor de Rosa">
-        <div class="card-body">
-          <h5 class="card-title">Flores de Rosa</h5>
-          <p class="card-text">Misturas de sensações puras</p>
-          <a href="" class="btn">Ver produto</a>
-        </div>
-      </div>
+    </main>
 
-      <div class="card">
-        <img src="img/produtos/tampa_de_caixa.jpeg" class="card-img-top" alt="Flor de Rosa">
-        <div class="card-body">
-          <h5 class="card-title">Branco</h5>
-          <p class="card-text">Carregando tons suaves e leves de paz.</p>
-          <a href="" class="btn">Ver produto</a>
-        </div>
-      </div>
-    </div>  
+    <!--rodape-->
+    <footer id="rodape">
+        <div class="footer-decoration">✦</div>
+        <h2>Etternizear</h2>
+        <p>Transformando sentimentos em presentes especiais.</p>
+        <div class="footer-line"></div>
+        <small>© 2026 Etternizear — Feito com carinho ✦</small>
+        <small> <a href="https://www.instagram.com/etternizear?cplk=Z3o1bmhldmwzb3Rh&utm_source=qr" style="color: #D6B56D; background:;">Etternizear</a></small>
+        <small>Desenvolvido por João Pedro </small>
+    </footer>
 
-  <footer>© 2025 Etternizear — Feito com carinho ✦</footer>
 </body>
-
 </html>
