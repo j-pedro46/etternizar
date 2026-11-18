@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,14 +47,14 @@
                 <li>
                     <a href="#catalogo">
                         <span class="menu-symbol">♡</span>
-                        Catálogo
+                        Cartas 
                     </a>
                 </li>
 
                 <li>
                     <a href="#rodape">
                         <span class="menu-symbol">✉</span>
-                        Contato
+                        Caixa de Presente
                     </a>
                 </li>
             </ul>
@@ -106,7 +108,7 @@
                 <div class="card-content">
                     <h3>Buquê de Rosas Vermelhas</h3>
                     <p>Essencial para mostrar sentimentos de amor e admiração.</p>
-                    <a href="#" class="btn">Ver produto</a>
+                    <button type="button" class="btn ver-produto">Ver produto</button>
                 </div>
             </article>
 
@@ -115,7 +117,7 @@
                 <div class="card-content">
                     <h3>Buquê Azul</h3>
                     <p>Uma combinação delicada para momentos especiais.</p>
-                    <a href="#" class="btn">Ver produto</a>
+                    <button type="button" class="btn ver-produto">Ver produto</button>
                 </div>
             </article>
 
@@ -124,7 +126,7 @@
                 <div class="card-content">
                     <h3>Buquê Pink</h3>
                     <p>Delicadeza e beleza para surpreender alguém.</p>
-                    <a href="#" class="btn">Ver produto</a>
+                    <button type="button" class="btn ver-produto">Ver produto</button>
                 </div>
             </article>
 
@@ -133,7 +135,7 @@
                 <div class="card-content">
                     <h3>Buquê White Blue</h3>
                     <p>Uma composição elegante e cheia de charme.</p>
-                    <a href="#" class="btn">Ver produto</a>
+                    <button type="button" class="btn ver-produto">Ver produto</button>
                 </div>
             </article>
 
@@ -142,7 +144,7 @@
                 <div class="card-content">
                     <h3>Buquê Espiral</h3>
                     <p>Um arranjo especial para presentear com carinho.</p>
-                    <a href="#" class="btn">Ver produto</a>
+                    <button type="button" class="btn ver-produto">Ver produto</button>
                 </div>
             </article>
 
@@ -151,7 +153,7 @@
                 <div class="card-content">
                     <h3>Buquê Amarelo</h3>
                     <p>Uma escolha alegre para iluminar o dia de alguém.</p>
-                    <a href="#" class="btn">Ver produto</a>
+                    <button type="button" class="btn ver-produto">Ver produto</button>
                 </div>
             </article>
 
@@ -160,7 +162,7 @@
                 <div class="card-content">
                     <h3>Buquê Rosa</h3>
                     <p>Romantismo e delicadeza em cada detalhe.</p>
-                    <a href="#" class="btn">Ver produto</a>
+                    <button type="button" class="btn ver-produto">Ver produto</button>
                 </div>
             </article>
 
@@ -169,7 +171,7 @@
                 <div class="card-content">
                     <h3>Buquê Azul Leve</h3>
                     <p>Uma opção delicada para presentear com elegância.</p>
-                    <a href="#" class="btn">Ver produto</a>
+                    <button type="button" class="btn ver-produto">Ver produto</button>
                 </div>
             </article>
 
@@ -178,7 +180,7 @@
                 <div class="card-content">
                     <h3>Buquê Iluminado</h3>
                     <p>Um presente encantador para ocasiões especiais.</p>
-                    <a href="#" class="btn">Ver produto</a>
+                    <button type="button" class="btn ver-produto">Ver produto</button>
                 </div>
             </article>
 
@@ -187,7 +189,7 @@
                 <div class="card-content">
                     <h3>Buquê Azul Delicado</h3>
                     <p>Beleza e delicadeza em uma composição especial.</p>
-                    <a href="#" class="btn">Ver produto</a>
+                    <button type="button" class="btn ver-produto">Ver produto</button>
                 </div>
             </article>
 
@@ -196,7 +198,7 @@
                 <div class="card-content">
                     <h3>Sonho de Valsa</h3>
                     <p>Uma combinação especial para surpreender.</p>
-                    <a href="#" class="btn">Ver produto</a>
+                    <button type="button" class="btn ver-produto">Ver produto</button>
                 </div>
             </article>
 
@@ -205,7 +207,7 @@
                 <div class="card-content">
                     <h3>Caixa Especial</h3>
                     <p>Um detalhe especial para completar seu presente.</p>
-                    <a href="#" class="btn">Ver produto</a>
+                    <button type="button" class="btn ver-produto">Ver produto</button>
                 </div>
             </article>
 
@@ -213,16 +215,110 @@
 
     </main>
 
-    <!--rodape-->
+    <!-- RODAPÉ -->
     <footer id="rodape">
         <div class="footer-decoration">✦</div>
         <h2>Etternizear</h2>
         <p>Transformando sentimentos em presentes especiais.</p>
         <div class="footer-line"></div>
         <small>© 2026 Etternizear — Feito com carinho ✦</small>
-        <small> <a href="https://www.instagram.com/etternizear?cplk=Z3o1bmhldmwzb3Rh&utm_source=qr" style="color: #D6B56D; background:">Etternizear</a></small>
-        <small>Desenvolvido por João Pedro </small>
+
+        <small>
+            <a href="https://www.instagram.com/etternizear?cplk=Z3o1bmhldmwzb3Rh&utm_source=qr"
+                style="color: #D6B56D;">
+                Etternizear
+            </a>
+        </small>
+
+        <small>Desenvolvido por João Pedro</small>
     </footer>
+
+    <!-- MODAL DOS PRODUTOS -->
+    <div class="produto-modal" id="produtoModal">
+
+        <div class="modal-conteudo">
+
+            <button type="button" class="modal-fechar" id="fecharModal" aria-label="Fechar">
+                &times;
+            </button>
+
+            <img id="modalImagem" src="" alt="Produto ampliado">
+
+            <div class="modal-info">
+                <h2 id="modalTitulo"></h2>
+                <p id="modalDescricao"></p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        const modal = document.getElementById("produtoModal");
+        const modalImagem = document.getElementById("modalImagem");
+        const modalTitulo = document.getElementById("modalTitulo");
+        const modalDescricao = document.getElementById("modalDescricao");
+
+        const botoes = document.querySelectorAll(".ver-produto");
+
+        // Abrir o modal com as informações do produto clicado
+        botoes.forEach(botao => {
+
+            botao.addEventListener("click", () => {
+
+                const card = botao.closest(".card");
+
+                const imagem = card.querySelector("img");
+                const titulo = card.querySelector("h3");
+                const descricao = card.querySelector("p");
+
+                modalImagem.src = imagem.src;
+                modalImagem.alt = imagem.alt;
+
+                modalTitulo.textContent = titulo.textContent;
+                modalDescricao.textContent = descricao.textContent;
+                modalDescricao.innerHTML += "<br><br><strong>Prazo de entrega:</strong> 1 a 4 dias úteis";
+
+                modal.classList.add("ativo");
+                document.body.classList.add("modal-aberto");
+
+            });
+
+        });
+
+        // Fechar o modal
+        function fecharModal() {
+
+            modal.classList.remove("ativo");
+            document.body.classList.remove("modal-aberto");
+
+        }
+
+        // Botão X
+        document.getElementById("fecharModal")
+            .addEventListener("click", fecharModal);
+
+        // Fechar clicando fora do conteúdo
+        modal.addEventListener("click", (evento) => {
+
+            if (evento.target === modal) {
+                fecharModal();
+            }
+
+        });
+
+        // Fechar apertando ESC
+        document.addEventListener("keydown", (evento) => {
+
+            if (evento.key === "Escape") {
+                fecharModal();
+            }
+
+        });
+
+    </script>
 
 </body>
 </html>
